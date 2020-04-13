@@ -55,8 +55,38 @@
             margin-bottom: 5px;
         }
 
+        /*
         .kotakdalam {
             margin-top: 7px;
+        }
+*/
+
+        .menu-item {
+            /* hide and position tooltip */
+            opacity: 0;
+            transition: opacity 0s ease-in 600ms, opacity 600ms;
+            position: relative;
+        }
+
+        .menu-item:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transition: width 600ms;
+        }
+
+        .menu-item-hover:hover .menu-item {
+            opacity: 1;
+            transition: opacity 0s ease-in 600ms, opacity 600ms;
+        }
+
+        .menu-item-hover:hover .menu-item:after {
+            width: 0;
         }
 
         .lupapass {
@@ -110,9 +140,23 @@
             <input type="text" class="kotaklogin" id="user" placeholder="Masukkan username anda">
             <p>Password</p>
             <input type="password" class="kotakpass" id="pass" placeholder="Masukkan password anda">
-            <div class="kotakdalam">
-                <span class="lupapass"><i class="fas fa-question"></i></span>
-                <span class="register"><i class="fas fa-user-plus"></i></span><br>
+
+            <div class="menu-item-hover">
+                <i class="fas fa-question"></i>
+                <span>
+                    <span class="menu-item">
+                        Lupa Password?
+                    </span>
+                </span>
+            </div>
+
+            <div class="menu-item-hover">
+                <i class="fas fa-user-plus"></i>
+                <span>
+                    <span class="menu-item">
+                        Register
+                    </span>
+                </span>
             </div>
             <input type="submit" class="tombolsubmit">
         </div>
