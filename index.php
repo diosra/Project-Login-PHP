@@ -55,32 +55,30 @@
             margin-bottom: 5px;
         }
 
-        /*
-        .kotakdalam {
-            margin-top: 7px;
+        .menu-item-hover {
+            margin-left: 6px;
+            display: inline;
         }
-*/
 
         .menu-item {
-            /* hide and position tooltip */
             opacity: 0;
             transition: opacity 0s ease-in 600ms, opacity 600ms;
             position: relative;
         }
 
         .menu-item:after {
-            display: block;
+            display: inline;
             content: '';
             position: absolute;
             top: 0;
             right: 0;
-            width: 100%;
-            height: 100%;
             background-color: #fff;
             transition: width 600ms;
         }
 
         .menu-item-hover:hover .menu-item {
+            cursor: pointer;
+            color: red;
             opacity: 1;
             transition: opacity 0s ease-in 600ms, opacity 600ms;
         }
@@ -145,7 +143,7 @@
                 <i class="fas fa-question"></i>
                 <span>
                     <span class="menu-item">
-                        Lupa Password?
+                        <a href="" target="_blank"> Lupa Password?</a>
                     </span>
                 </span>
             </div>
@@ -154,7 +152,7 @@
                 <i class="fas fa-user-plus"></i>
                 <span>
                     <span class="menu-item">
-                        Register
+                        <a href="" target="_blank"> Register</a>
                     </span>
                 </span>
             </div>
