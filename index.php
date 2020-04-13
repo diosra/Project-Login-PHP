@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <title>Login</title>
 
     <style type="text/css">
@@ -39,7 +41,6 @@
             width: 35%;
             margin: 0 auto;
             overflow: auto;
-            position: relative;
         }
 
         .isianmenu p {
@@ -59,8 +60,9 @@
         }
 
         .lupapass {
-            float: left;
+            margin-left: 5px;
             cursor: pointer;
+            color: red;
         }
 
         .lupapass:hover {
@@ -69,7 +71,7 @@
         }
 
         .register {
-            float: right;
+            margin-left: 20px;
             cursor: pointer;
         }
 
@@ -109,7 +111,8 @@
             <p>Password</p>
             <input type="password" class="kotakpass" id="pass" placeholder="Masukkan password anda">
             <div class="kotakdalam">
-                <span class="lupapass">Lupa Password</span> <span class="register">Register</span><br>
+                <span class="lupapass"><i class="fas fa-question"></i></span>
+                <span class="register"><i class="fas fa-user-plus"></i></span><br>
             </div>
             <input type="submit" class="tombolsubmit">
         </div>
