@@ -1,0 +1,14 @@
+{
+  "name": "tugastesting_projectlogin_muhammaddiosyahputra_17710075",
+  "version": "1.0.0",
+  "description": "tugas testing dan implementasi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Dio Syahputra",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
