@@ -53,6 +53,7 @@
             padding: 3px;
             width: 100%;
             margin-bottom: 5px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         }
 
         .menu-item-hover {
