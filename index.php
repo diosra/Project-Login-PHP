@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <title>Login</title>
+    <title>Login Page</title>
 
     <style type="text/css">
         * {
@@ -21,7 +21,7 @@
         .tempelatas {
             text-align: center;
             color: red;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
         }
 
         h2 {
@@ -48,14 +48,35 @@
             padding-left: 2px;
         }
 
-        .kotaklogin,
-        .kotakpass {
+        .kotaklogin {
             padding: 3px;
             width: 100%;
             margin-bottom: 5px;
             box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         }
 
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flexbox input {
+            flex-basis: 93%;
+        }
+
+        .flexbox i {
+            flex-basis: 7%;
+            margin-left: 10px;
+            margin-top: 8px;
+        }
+
+        /*
+        .kotakpass {
+            padding: 3px;
+            margin-bottom: 5px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+        }
+*/
         .menu-item-hover {
             margin-left: 6px;
             display: inline;
@@ -138,8 +159,10 @@
             <p>Username</p>
             <input type="text" class="kotaklogin" id="user" placeholder="Masukkan username anda">
             <p>Password</p>
-            <input type="password" class="kotakpass" id="pass" placeholder="Masukkan password anda">
-
+            <div class="flexbox">
+                <input type="password" class="kotakpass" id="pass" placeholder="Masukkan password anda">
+                <span><i class="fa fa-eye-slash"></i></span>
+            </div>
             <div class="menu-item-hover">
                 <i class="fas fa-question"></i>
                 <span>
