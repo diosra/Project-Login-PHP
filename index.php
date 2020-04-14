@@ -193,9 +193,9 @@
     <main>
         <div class="isianmenu">
             <h2>LOGIN</h2>
-            <p>Username</p>
+            <p style="margin-bottom: -1px;">Username</p>
             <input type="text" class="kotaklogin" id="user" placeholder="Masukkan username anda">
-            <p>Password</p>
+            <p style="margin-bottom: -1px;">Password</p>
             <div class="flexbox">
                 <input type="password" class="kotakpass" id="password" placeholder="Masukkan password anda">
                 <i class="fas fa-eye-slash" onclick="show()"></i>
@@ -216,7 +216,9 @@
                     </span>
                 </span>
             </div>
+
             <button type="button" class="btn btn-outline-success">LOGIN</button>
+
         </div>
         <div class="clock">
             <h3>Waktu sekarang menunjukkan:</h3>
