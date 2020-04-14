@@ -160,8 +160,8 @@
             <input type="text" class="kotaklogin" id="user" placeholder="Masukkan username anda">
             <p>Password</p>
             <div class="flexbox">
-                <input type="password" class="kotakpass" id="pass" placeholder="Masukkan password anda">
-                <span><i class="fa fa-eye-slash"></i></span>
+                <input type="password" class="kotakpass" id="password" placeholder="Masukkan password anda">
+                <i class="fas fa-eye-slash" onclick="show()"></i>
             </div>
             <div class="menu-item-hover">
                 <i class="fas fa-question"></i>
@@ -187,6 +187,24 @@
     <footer>
 
     </footer>
+
+    <script>
+        function show() {
+            let x = document.getElementById("password");
+            let c = x.nextElementSibling
+            if (x.getAttribute('type') == "password") {
+                c.removeAttribute("class");
+                c.setAttribute("class", "fa fa-eye");
+                x.removeAttribute("type");
+                x.setAttribute("type", "text");
+            } else {
+                c.removeAttribute("class");
+                c.setAttribute("class", "fa fa-eye-slash");
+                x.removeAttribute("type");
+                x.setAttribute("type", "password");
+            }
+        }
+    </script>
 </body>
 
 </html>
