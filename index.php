@@ -16,17 +16,56 @@
         body {
             margin: 0;
             padding: 0;
+            background-image: url("images/pic.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .tempelatas {
             text-align: center;
-            color: red;
-            margin-bottom: 40px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        main {
+            margin-top: 30px;
+        }
+
+        .clock {
+            padding: 30px;
+            color: white;
+            font-family: sans-serif;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .clock h3 {
+            display: inline;
+        }
+
+        .clock .time {
+            font-size: 25px;
+            margin: 0 auto;
+            margin-top: -10px;
+            background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .clock .date {
+            font-size: 25px;
+            margin: 0 auto;
+            background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
             text-align: center;
-            text-decoration: underline blue;
+            text-decoration: underline;
+            margin-bottom: 15px;
         }
 
         .isianmenu {
@@ -41,11 +80,15 @@
             width: 35%;
             margin: 0 auto;
             overflow: auto;
+            color: black;
+
         }
 
         .isianmenu p {
             text-align: left;
             padding-left: 2px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .kotaklogin {
@@ -53,7 +96,9 @@
             width: 100%;
             margin-bottom: 5px;
             box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 7px;
         }
+
 
         .flexbox {
             display: flex;
@@ -62,6 +107,9 @@
 
         .flexbox input {
             flex-basis: 93%;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: 6px;
+            border-radius: 7px;
         }
 
         .flexbox i {
@@ -70,13 +118,6 @@
             margin-top: 8px;
         }
 
-        /*
-        .kotakpass {
-            padding: 3px;
-            margin-bottom: 5px;
-            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-        }
-*/
         .menu-item-hover {
             margin-left: 6px;
             display: inline;
@@ -86,6 +127,10 @@
             opacity: 0;
             transition: opacity 0s ease-in 600ms, opacity 600ms;
             position: relative;
+        }
+
+        .menu-item a {
+            color: white;
         }
 
         .menu-item:after {
@@ -116,7 +161,7 @@
         }
 
         .lupapass:hover {
-            color: blue;
+            color: white;
             font-weight: bold;
         }
 
@@ -126,22 +171,14 @@
         }
 
         .register:hover {
-            color: aqua;
+            color: white;
             font-weight: bold;
         }
 
-        .tombolsubmit {
-            margin-top: 7px;
-            width: 50%;
-            height: 35px;
+        .btn {
             float: right;
-            cursor: pointer;
-        }
-
-        .tombolsubmit:hover {
-            background-color: red;
-            font-weight: bolder;
-            color: white;
+            margin-top: 20px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -149,7 +186,7 @@
 <body>
     <header>
         <div class="tempelatas">
-            <h1>Selamat Datang, Silahkan Login</h1>
+            <h1>Selamat Datang</h1>
         </div>
     </header>
 
@@ -171,7 +208,6 @@
                     </span>
                 </span>
             </div>
-
             <div class="menu-item-hover">
                 <i class="fas fa-user-plus"></i>
                 <span>
@@ -180,7 +216,14 @@
                     </span>
                 </span>
             </div>
-            <input type="submit" class="tombolsubmit">
+            <button type="button" class="btn btn-outline-success">LOGIN</button>
+        </div>
+        <div class="clock">
+            <h3>Waktu sekarang menunjukkan:</h3>
+            <span class="time"></span>
+            <br>
+            <h3>Tanggal sekarang menunjukkan :</h3>
+            <span class="date"></span>
         </div>
     </main>
 
@@ -188,6 +231,8 @@
 
     </footer>
 
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         function show() {
             let x = document.getElementById("password");
@@ -204,6 +249,20 @@
                 x.setAttribute("type", "password");
             }
         }
+    </script>
+    <script>
+        const displayTime = () => {
+            moment.locale("id");
+            $(".time").text(moment().format("LTS"));
+            $(".date").text(moment().format("LL"));
+        };
+
+        const updateTime = () => {
+            displayTime();
+            setTimeout(updateTime, 1000)
+        };
+
+        updateTime();
     </script>
 </body>
 
