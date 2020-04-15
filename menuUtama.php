@@ -23,15 +23,24 @@ if (!$_SESSION["is_login"] === TRUE) {
 
     </header>
     <main>
+        <?php require_once 'process_crud.php'; ?>
         <div class="row justify-content-center">
-            <form action="" method="POST">
+            <form action="process_crud.php" method="POST">
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="name" class="form-control" value="Enter your name">
                 </div>
                 <div class="form-group">
+                    <label>NPM</label>
+                    <input type="text" name="npm" class="form-control" value="Enter your npm">
+                </div>
+                <div class="form-group">
                     <label>Alamat</label>
                     <input type="text" name="location" class="form-control" value="Enter your location">
+                </div>
+                <div class="form-group">
+                    <label>Hobi</label>
+                    <input type="text" name="hobi" class="form-control" value="Enter your hobi">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" name="save">Simpan</button>
