@@ -179,6 +179,8 @@
             float: right;
             margin-top: 20px;
             margin-right: 10px;
+            border: 2px solid black;
+            background-color: darkorange;
         }
     </style>
 </head>
@@ -191,7 +193,7 @@
     </header>
 
     <main>
-        
+
         <form action="proses_login.php" method="POST" class="isianmenu">
             <h2>LOGIN</h2>
             <p style="margin-bottom: -1px;">Username</p>
@@ -219,9 +221,9 @@
                 </span>
             </div>
 
-            <input type="submit" value="Login Now">
+            <input type="submit" value="Login Now" class="btn">
         </form>
-        
+
         <div class="clock">
             <h3>Waktu sekarang menunjukkan:</h3>
             <span class="time"></span>
