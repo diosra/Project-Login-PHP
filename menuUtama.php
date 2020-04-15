@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 
-if (!$_SESSION["is_login"] === TRUE) {
+if (isset($_SESSION["is_login"])) {
     header("location: index.php");
     exit;
 }
