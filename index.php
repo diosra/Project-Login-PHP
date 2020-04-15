@@ -191,13 +191,15 @@
     </header>
 
     <main>
-        <div class="isianmenu">
+        
+        <form action="proses_login.php" method="POST" class="isianmenu">
             <h2>LOGIN</h2>
             <p style="margin-bottom: -1px;">Username</p>
-            <input type="text" class="kotaklogin" id="user" placeholder="Masukkan username anda">
+            <input type="text" name="username" class="kotaklogin" id="user" placeholder="Masukkan username anda">
+
             <p style="margin-bottom: -1px;">Password</p>
             <div class="flexbox">
-                <input type="password" class="kotakpass" id="password" placeholder="Masukkan password anda">
+                <input type="password" name="password" class="kotakpass" id="password" placeholder="Masukkan password anda">
                 <i class="fas fa-eye-slash" onclick="show()"></i>
             </div>
             <div class="menu-item-hover">
@@ -217,9 +219,9 @@
                 </span>
             </div>
 
-            <button type="button" class="btn btn-outline-success">LOGIN</button>
-
-        </div>
+            <input type="submit" value="Login Now">
+        </form>
+        
         <div class="clock">
             <h3>Waktu sekarang menunjukkan:</h3>
             <span class="time"></span>
