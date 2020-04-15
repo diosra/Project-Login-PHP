@@ -24,33 +24,93 @@ if (!$_SESSION["is_login"] === TRUE) {
     </header>
     <main>
         <?php require_once 'process_crud.php'; ?>
-        <div class="row justify-content-center">
-            <form action="process_crud.php" method="POST">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form-control" value="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label>NPM</label>
-                    <input type="text" name="npm" class="form-control" value="Enter your npm">
-                </div>
-                <div class="form-group">
-                    <label>Alamat</label>
-                    <input type="text" name="location" class="form-control" value="Enter your location">
-                </div>
-                <div class="form-group">
-                    <label>Hobi</label>
-                    <input type="text" name="hobi" class="form-control" value="Enter your hobi">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" name="save">Simpan</button>
-                </div>
-            </form>
-        </div>
+
+        <?php
+        if (isset($_SESSION['message'])) :
+        ?>
+
+            <div class="alert alert-<?= $_SESSION['msg_type'] ?>">
+
+                <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                ?>
+            </div>
+        <?php endif ?>
+        <div class="container">
+            <?php
+            $mysqli = new mysqli('localhost', 'root', '', 'userdatalogin') or die(mysqli_error($mysqli));
+            $result = $mysqli->query("SELECT * FROM data_mhs") or die($mysqli->error);
+            ?>
+
+            <div class="row justify-content-center">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>NPM</th>
+                            <th>Hobi</th>
+                            <th>Alamat</th>
+                            <th colspan="4">Action</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    while ($row = $result->fetch_assoc()) :
+                    ?>
+                        <tr>
+                            <td><?php echo $row['nama']; ?></td>
+                            <td><?php echo $row['npm']; ?></td>
+                            <td><?php echo $row['hobi']; ?></td>
+                            <td><?php echo $row['alamat']; ?></td>
+                            <td>
+                                <a href="menuUtama.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit
+                                </a>
+                                <a href="process_crud.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
+            </div>
+
+            <?php
+            function pre_r($array)
+            {
+                echo '<pre>';
+                print_r($array);
+                echo '<pre>';
+            }
+            ?>
+
+            <div class="row justify-content-center">
+                <form action="process_crud.php" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" value="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>NPM</label>
+                        <input type="text" name="npm" class="form-control" value="Enter your npm">
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" name="location" class="form-control" value="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <label>Hobi</label>
+                        <input type="text" name="hobi" class="form-control" value="Enter your hobi">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" name="save">Simpan</button>
+                    </div>
+                </form>
+            </div>
     </main>
     <footer>
 
     </footer>
+
+    </div>
 </body>
 
 </html>
