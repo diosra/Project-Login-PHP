@@ -84,24 +84,32 @@ if (isset($_SESSION["is_login"])) {
 
             <div class="row justify-content-center">
                 <form action="process_crud.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" class="form-control" value="Enter your name">
+                        <input type="text" name="name" class="form-control" value="<?php echo $nama; ?>" placeholder="Enter your name">
                     </div>
                     <div class="form-group">
                         <label>NPM</label>
-                        <input type="text" name="npm" class="form-control" value="Enter your npm">
-                    </div>
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" name="location" class="form-control" value="Enter your location">
+                        <input type="text" name="npm" class="form-control" value="<?php echo $npm; ?>" placeholder="Enter your npm">
                     </div>
                     <div class="form-group">
                         <label>Hobi</label>
-                        <input type="text" name="hobi" class="form-control" value="Enter your hobi">
+                        <input type="text" name="hobi" class="form-control" value="<?php echo $hobi; ?>" placeholder="Enter your hobi">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" name="save">Simpan</button>
+                        <label>Alamat</label>
+                        <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Enter your location">
+                    </div>
+
+                    <div class="form-group">
+                        <?php
+                        if ($update == true) :
+                        ?>
+                            <button type="submit" class="btn btn-info" name="update">Update</button>
+                        <?php else : ?>
+                            <button type="submit" class="btn btn-primary" name="save">Simpan</button>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>
